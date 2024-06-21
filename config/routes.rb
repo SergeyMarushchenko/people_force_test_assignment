@@ -7,4 +7,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :tenants, only: :update
+  resources :users do
+    put :update_value, on: :member
+  end
 end
